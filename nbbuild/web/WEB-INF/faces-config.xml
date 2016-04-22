@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+<!--	<application>
+		<resource-bundle>
+			<base-name>EFilingToolMessageResources</base-name>
+			<var>labels</var>
+		</resource-bundle>
+		<action-listener>org.primefaces.application.DialogActionListener</action-listener>
+		<navigation-handler>
+			org.primefaces.application.DialogNavigationHandler
+		</navigation-handler>
+		<view-handler>org.primefaces.application.DialogViewHandler</view-handler>
+	</application>-->
+
+
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			
+			<from-outcome>success</from-outcome>
+			<to-view-id>/user/userhome.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+
+		
+
+		<navigation-case>
+			<from-action>#{loginBean.doLogin}</from-action>
+			<from-outcome>failed</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		
+
+
+
+    </navigation-rule>
+
+    <!--	<lifecycle>
+            <phase-listener id="nocache">nic.confonet.web.efiling.common.CacheControlPhaseListener</phase-listener>
+    </lifecycle>-->
+        
+    <navigation-rule>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{loginBean.loginAttempt}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/client/userhome.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+
+        <navigation-case>
+            <from-action>#{loginBean.createNewAccount}</from-action>
+            <from-outcome>newaccount</from-outcome>
+            <to-view-id>/createuser.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+
+        <navigation-case>
+            <from-action>#{loginBean.loginAttempt}</from-action>
+            <from-outcome>failed</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{loginBean.loginAttempt}</from-action>
+            <from-outcome>notmatch</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+
+
+
+    </navigation-rule>
+
+</faces-config>

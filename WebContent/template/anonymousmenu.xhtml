@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:form id="frmAnonymousMenu">
+
+        <p:menu style="width:auto;">
+            <p:menuitem value="Home" url="/faces/index.xhtml" icon="ui-icon-home" />
+            <p:submenu label="User Section">
+                <p:menuitem value="Login" url="/faces/login.xhtml" />
+                <p:menuitem value="Registration" url="/faces/createuser.xhtml" />
+
+            </p:submenu>
+
+            <p:submenu label="Useful Links" icon="ui-icon-home">
+                <p:menuitem value="Test 1" url="#"
+                            target="_blank" />
+                <p:menuitem value="Test 2"
+                            url="#"
+                            target="_blank" />
+                <p:menuitem value="Test 3"
+                            url="#" target="_blank" />
+                <p:menuitem value="Test 4"
+                            url="#"
+                            target="_blank" />
+                <p:menuitem value="Test 5"
+                            url="#"
+                            target="_blank" />
+
+                <p:menuitem value="Feedback"
+                            url="#" target="_blank" />
+                <p:menuitem value="National Informatics Center" url="www.nic.in"
+                            target="_blank" />
+
+
+
+            </p:submenu>
+        </p:menu>
+        <p:calendar mode="inline" style="width:auto;"></p:calendar>
+
+    </h:form>
+
+</html>
